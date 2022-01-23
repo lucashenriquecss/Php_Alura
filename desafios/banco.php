@@ -1,10 +1,13 @@
 <?php
 
+exibeMenssagem{
+    
+}
 
 $contacorrente = [
     '102.66' => [
         'titular' => 'Maria',
-        'Saldo' => 10000
+        'Saldo' => 499
     ],
     '103.66' => [
         'titular' => 'Marcos',
@@ -19,10 +22,14 @@ $contacorrente = [
         'Saldo' => 10000
     ],
 ];
-if (condition) {
+
+
+if (500 > $contacorrente['102.66']['Saldo']) {
+    echo 'Você nao pode sacara esse valor';
     # code...
+}else {
+    $contacorrente['102.66']['Saldo'] -= 500;
 }
-$contacorrente['102.66']['Saldo'] -= 500;
 
 foreach($contacorrente as $cpf => $conta){
     echo $cpf . " " . $conta['titular'] . ' ' . $conta['Saldo'] .PHP_EOL;
